@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:12
+    container_name: postgres_news
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+    volumes:
+      - ${STORAGE_PATH}:/docker-entrypoint-initdb.d/init.sql
+
+  pgweb:
+    image: sosedoff/pgweb
+    container_name: pgweb
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:${POSTGRES_PORT}/${POSTGRES_DB}?sslmode=disable
+    ports:
+      - "8085:8081"
+    depends_on:
+      - db
+
+#  myapp:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    depends_on:
+#      - db

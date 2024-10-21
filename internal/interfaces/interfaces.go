@@ -1,8 +1,10 @@
 package interfaces
 
-import "AIChallenge/internal/entity"
+import (
+	"AIChallenge/internal/entity"
+)
 
-type NewsRepository interface {
+type RepositoryInter interface {
 	AddNews(news entity.News) error
 	GetNewsById(id int) (*entity.News, error)
 	ContainNews(url string) (bool, error)
@@ -11,7 +13,9 @@ type NewsRepository interface {
 }
 
 type Parser interface {
-	Parse(body string) ([]entity.News, error)
+	ParseNewsDigest(body string) ([]entity.NewsDigest, error)
+	ParseNews(body string, newsDigest entity.NewsDigest) (*entity.News, error)
+	FetchHTML(url string) (string, error)
 }
 
 type NewsUseCase interface {

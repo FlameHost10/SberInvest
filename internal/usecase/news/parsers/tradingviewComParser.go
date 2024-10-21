@@ -18,8 +18,8 @@ func NewTradingviewComParser(log *slog.Logger) *TradingviewComParser {
 	return &TradingviewComParser{log: log}
 }
 
-func (p *TradingviewComParser) Parse(body string) ([]entity.News, error) {
-	log.Printf("tradingview.com news")
+func (p *TradingviewComParser) ParseNewsDigest(body string) ([]entity.NewsDigest, error) {
+	p.log.Info("tradingview.com news parsing")
 
 	doc, err := goquery.NewDocumentFromReader(strings.NewReader(body))
 	if err != nil {
@@ -28,7 +28,7 @@ func (p *TradingviewComParser) Parse(body string) ([]entity.News, error) {
 	}
 
 	prefixLink := "https://ru.tradingview.com"
-	var newsArray []entity.News
+	var newsArray []entity.NewsDigest
 
 	doc.Find("a.card-DmjQR0Aa").Each(func(i int, s *goquery.Selection) {
 		title := s.Find("div.title-DmjQR0Aa").Text()
@@ -47,7 +47,7 @@ func (p *TradingviewComParser) Parse(body string) ([]entity.News, error) {
 		}
 
 		if exists {
-			newsArray = append(newsArray, entity.News{
+			newsArray = append(newsArray, entity.NewsDigest{
 				Title:       title,
 				Link:        link,
 				Source:      source,

@@ -10,7 +10,7 @@ services:
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
     volumes:
-      - ${STORAGE_PATH}:/docker-entrypoint-initdb.d/init.sql
+      - ${REPOSITORY_PATH}:/docker-entrypoint-initdb.d/init.sql
 
   pgweb:
     image: sosedoff/pgweb
@@ -21,10 +21,19 @@ services:
       - "8085:8081"
     depends_on:
       - db
-
-#  myapp:
+#
+#  app:
 #    build:
 #      context: .
 #      dockerfile: Dockerfile
+#    ports:
+#      - "8080:8080"
+##    env_file:
+##      - .env
 #    depends_on:
 #      - db
+##    volumes:
+##      - .:/root
+#    environment:
+#      - CONFIG_PATH=/new/app/.env
+#

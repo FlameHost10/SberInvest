@@ -22,5 +22,5 @@ bin/
 vendor/
 
 *.rdb
-
+.env
 */config/local.yaml

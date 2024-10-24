@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"AIChallenge/internal/entity"
+	"AIChallengeNewsAPI/internal/entity"
 	"github.com/PuerkitoBio/goquery"
 )
 

@@ -1,7 +1,7 @@
 package interfaces
 
 import (
-	"AIChallenge/internal/entity"
+	"AIChallengeNewsAPI/internal/entity"
 )
 
 type RepositoryInter interface {

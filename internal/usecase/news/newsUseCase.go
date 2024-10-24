@@ -1,10 +1,10 @@
 package usecase
 
 import (
-	"AIChallenge/internal/entity"
-	"AIChallenge/internal/interfaces"
-	"AIChallenge/internal/repository"
-	"AIChallenge/internal/usecase/news/parsers"
+	"AIChallengeNewsAPI/internal/entity"
+	"AIChallengeNewsAPI/internal/interfaces"
+	"AIChallengeNewsAPI/internal/repository"
+	"AIChallengeNewsAPI/internal/usecase/news/parsers"
 	"fmt"
 	"log"
 	"log/slog"

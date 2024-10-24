@@ -1,4 +1,4 @@
-module AIChallenge
+module AIChallengeNewsAPI
 
 go 1.23
 

@@ -1,11 +1,11 @@
 package main
 
 import (
-	"AIChallenge/internal/config"
-	"AIChallenge/internal/httpServer"
-	"AIChallenge/internal/logger"
-	"AIChallenge/internal/repository"
-	newsUsecase "AIChallenge/internal/usecase/news"
+	"AIChallengeNewsAPI/internal/config"
+	"AIChallengeNewsAPI/internal/httpServer"
+	"AIChallengeNewsAPI/internal/logger"
+	"AIChallengeNewsAPI/internal/repository"
+	newsUsecase "AIChallengeNewsAPI/internal/usecase/news"
 	"fmt"
 	"github.com/gorilla/mux"
 	"log/slog"

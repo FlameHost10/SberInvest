@@ -1,7 +1,7 @@
 package parsers
 
 import (
-	"AIChallenge/internal/entity"
+	"AIChallengeNewsAPI/internal/entity"
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
 	"io/ioutil"

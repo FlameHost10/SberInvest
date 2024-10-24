@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"AIChallenge/internal/entity"
+	"AIChallengeNewsAPI/internal/entity"
 	"database/sql"
 	"fmt"
 	"log/slog"

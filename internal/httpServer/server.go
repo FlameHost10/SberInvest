@@ -1,11 +1,11 @@
 package httpServer
 
 import (
+	usecase "AIChallengeNewsAPI/internal/usecase/news"
 	"encoding/json"
 	"net/http"
 	"strconv"
 
-	"AIChallenge/internal/usecase/news"
 	"github.com/gorilla/mux"
 )
 

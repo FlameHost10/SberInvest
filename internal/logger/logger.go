@@ -1,7 +1,7 @@
 package logger
 
 import (
-	"AIChallenge/internal/lib/handlers/slogpretty"
+	"AIChallengeNewsAPI/internal/lib/handlers/slogpretty"
 	"log/slog"
 	"os"
 )

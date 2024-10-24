@@ -26,11 +26,11 @@ type NewsUseCase struct {
 func NewNewsUseCase(log *slog.Logger, repo *repository.Repository, numberNews int, interval time.Duration) (*NewsUseCase, error) {
 	var urls = []string{
 		"https://ru.investing.com/news/",
-		//"https://www.finmarket.ru/news/",
+		"https://www.finmarket.ru/news/",
 	}
 	var parsersArray = map[string]interfaces.Parser{
 		"ru.investing.com": parsers.NewInvestingComParser(log),
-		//"www.finmarket.ru": parsers.NewFinmarketComParser(log),
+		"www.finmarket.ru": parsers.NewFinmarketComParser(log),
 	}
 
 	return &NewsUseCase{

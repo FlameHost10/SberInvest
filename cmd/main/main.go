@@ -32,7 +32,7 @@ func main() {
 		return
 	}
 
-	newsUsecase, err := newsUsecase.NewNewsUseCase(log, repository, 10, 50*time.Second)
+	newsUsecase, err := newsUsecase.NewNewsUseCase(log, repository, 10, 10*time.Minute)
 	if err != nil {
 		log.Warn("failed to create newsUsecase", slog.String("error", err.Error()))
 		return
